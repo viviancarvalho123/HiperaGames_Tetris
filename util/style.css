@@ -1,76 +1,117 @@
-@font-face {
+/* Esta regra define uma fonte personalizada chamada 'Dekris' 
+para ser usada no documento. Define-se o nome da fonte, estilo (normal),
+ peso (normal) e a fonte propriamente dita usando a URL fornecida. */
+ @font-face {
     font-family: 'Dekris';
     font-style: normal;
     font-weight: normal;
     src: local('Deckris'), url('./ConnectionBold-ER1g.otf') format('truetype');
 }
 
-::-webkit-scrollbar {
+
+ ::-webkit-scrollbar {
     display: none;
-}
+} 
 
 body {
-    background-color: #333333;
-    color: #FFFFFF;
-    margin: 0;
+    background: -webkit-linear-gradient(left, #97c9ec, #0369e0);
+    background: -moz-linear-gradient(left, #97c9ec, #0369e0);
+    background: -ms-linear-gradient(left, #97c9ec, #0369e0);
+    background: -o-linear-gradient(left, #97c9ec, #0369e0);
+    background: linear-gradient(to right, #97c9ec, #0369e0);
+    color: #ffffff;
+    margin: 0; 
 }
 
-#score #speed {
+  #score #speed {
     display: inline-block;
-}
+}  
 
 div {
-    font-size: 25px;
+    font-size: 50px;
     font-weight: bold;
     font-family: monospace;
     text-align: center;
+   
 }
 
 canvas {
     display: block;
-    margin: 0 auto;
-}
+     margin: 0 auto; /*  significa que esta 0 de margin e auto para cima ou seja centralizado */
+     max-width: 100%;
+     align-items: flex-start;
+    }
+
+   
 
 #game {
     margin: 0 auto;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    overflow: hidden; /* Evita que haja rolagem extra atrás do jogo */
+    max-width: 100%;
+}
+
+.left.side, .right.side {
+    width: 100%;
+}
+
+#next-piece img {
+    max-width: 100%;
+}
+
+.right.side {
+    text-align: center;
 }
 
 .with-bg {
-    background-image: url('bg.jpg');
+    /* background-image: url('bg.jpg'); */
+    background: -webkit-linear-gradient(left, #97c9ec, #0369e0);
+    background: -moz-linear-gradient(left, #97c9ec, #0369e0);
+    background: -ms-linear-gradient(left, #97c9ec, #0369e0);
+    background: -o-linear-gradient(left, #97c9ec, #0369e0);
+    background: linear-gradient(to right, #97c9ec, #0369e0);
     background-repeat: no-repeat;
+    background-size: cover; /* Certifique-se de que a imagem de fundo cubra toda a tela */
     background-attachment: fixed;
     background-position: center top;
 }
 
 .side {
-    width: 400px;
+    width: 100%;
 }
 
 #tetris {
-    border: 4px outset #919191;
-    max-width: 400px !important;
-    max-height: 760px !important;
+    border: 4px outset -o-linear-gradient(left, #97c9ec, #0369e0);
+    max-width: 100%; /* Tornar o canvas responsivo */
+    max-height: auto; /* Remover a altura máxima para permitir dimensionamento proporcional */
+    /* max-width: 400px !important;
+    max-height: 760px !important; */
+
 }
 
 .float {
-    position: absolute;
-    left: 0;
+    position: relative;
+    /* left: 0;
     right: 0;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
 }
 
 .full-screen {
-    width: 1280px;
-    height: 800px;
-    max-width: 1280px;
-    max-height: 800px;
+    width: 100%;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 #game-over {
-    background-color: rgb(0 0 0 / 70%);
+    background-color: rgba(21, 5, 245, 0.502);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,36 +120,42 @@ canvas {
 
 #home {
     display: flex;
-    background-color: black;
+    background: -webkit-linear-gradient(left, #97c9ec, #0369e0);
+    background: -moz-linear-gradient(left, #97c9ec, #0369e0);
+    background: -ms-linear-gradient(left, #97c9ec, #0369e0);
+    background: -o-linear-gradient(left, #97c9ec, #0369e0);
+    background: linear-gradient(to right, #97c9ec, #0369e0);
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+   
 }
 
-.hidden {
+  .hidden {
     display: none !important;
-}
+}  
 
 .logo {
     font-family: 'Dekris', serif;
-    font-size: 160px;
-    text-shadow: 3px 4px 4px #a3a3a3;
+    font-size: 195px;
+    text-shadow: 10px 7px 7px #010004;
 }
 
 #quitBtn {
-    margin-top: 10px;
+    margin-top: 50px;
 }
 
 button {
+
+    border: 10px solid #2a03ed;
+    border-radius: 8px;
+    color: #000000;
+    cursor: pointer;
     display: block;
     box-sizing: border-box;
     margin: 0 auto;
     padding: 8px;
-    background: #fff;
     /* fallback color for old browsers */
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 8px;
-    color: #333;
     text-align: center;
     text-decoration: none;
     letter-spacing: 1px;
@@ -119,17 +166,18 @@ button {
 }
 
 button.active {
-    background: #FFF !important;
+    background: #f3f695 !important;
 }
 
 button:hover {
-    background: #FFF;
+    background: #f53d3d;
     cursor: pointer;
 }
 
 #startBtn {
     margin-top: 150px;
-}
+}   
+/* BOTÃO JOGAR */
 
 
 .red {
@@ -158,4 +206,4 @@ button:hover {
 
 .orange {
     color: orange;
-}
+} 

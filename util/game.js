@@ -5,10 +5,10 @@ const speedElement = document.getElementById("speed");
 const homeElement = document.getElementById('home');
 const gameOverElement = document.getElementById('game-over');
 
-const ROW = 19;
-const COL = 10;
-const SQ = 40;
-const defaultColor = "#111222";
+const ROW = 43;   // linha
+const COL = 24;  // coluna
+const SQ = 40;  //quadrado
+const defaultColor = "#000000";
 
 let isGameOver = false;
 let isHomeScreen = true;

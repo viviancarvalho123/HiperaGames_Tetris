@@ -12,27 +12,29 @@
 <body>
     <!-- HOME SCREEN -->
     <div id="home" class="full-screen float with-bg">
-        <div class="logo">
-            <span class="red">H</span>
-            <span class="pink">I</span>
-            <span class="yellow">P</span>
-            <span class="blue">E</span>
-            <span class="purple">R</span>
-            <span class="cyan">A</span> <br>
-            <span class="orange">GAME</span>
+        <div class="center">
 
-            <br>
+            
+     
+            <img style="height: 150px; width: 180px;" src="../tetrisJs-master/images/caca.png" alt="">
+ 
+
+            <div class="logo">
+                <span class="red">TETRIS</span> <span class="orange">GAME</span>
+            </div>
+
+           
             <button id="startBtn" class="semi-transparent-button active">
-                START
+                Jogar
             </button>
         </div>
-       
     </div>
 
     <!-- GAME OVER SCREEN -->
     <div id="game-over" class="full-screen float hidden">
-        <h1>Game Over</h1>
-        <h2>Score: <span class="score"></span></h2>
+        <!-- A classe "float" pode indicar que a div possui alguma propriedade de flutuação em relação a outros elementos. -->
+        <h1>Você Perdeu</h1>
+        <h2>Pontuação: <span class="score"></span></h2>
         <button id="playAgainBtn" class="active">Jogar Novamente</button>
         <button id="quitBtn">Desistir</button>
     </div>
@@ -40,18 +42,19 @@
     <!-- GAME SCREEN -->
     <div id="game" class="full-screen with-bg">
         <div class="left side"></div>
-        <canvas id="tetris" width="400" height="760"></canvas>
         <div class="right side">
             <div class="square"><img src="" id="next-piece" /></div>
             <p>Score: <span class="score"></span></p>
             <p>Speed: <span id="speed"></span></p>
         </div>
+        <canvas id="tetris" width="950" height="1700"></canvas>
     </div>
 
     <script src="./util/piece.js"></script>
     <script src="./util/skeletons.js"></script>
     <script src="./util/functions.js"></script>
     <script src="./util/game.js"></script>
+
 </body>
 
 </html>
